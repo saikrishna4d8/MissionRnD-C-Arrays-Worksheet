@@ -28,7 +28,6 @@ namespace spec
 			int Arr1[1] = { 1 };
 			Assert::IsNull(sortedArrayInsertNumber(Arr1, -2, 1), L"Length less than zero check failed.", LINE_INFO());
 		}
-
 		TEST_METHOD(insertAtFirstIndex)
 		{
 			int *Arr = createArray();

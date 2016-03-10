@@ -1,4 +1,5 @@
 /*
+
 OVERVIEW: Given a sorted array, insert a given number into the array at appropriate position.
 			E.g.: Arr = [2, 4, 6], num = 5 final Arr = [2, 4, 5, 6]. 5 is inserted at 2nd index.
 
@@ -16,5 +17,25 @@ NOTES: Use realloc to allocate memory.
 
 int * sortedArrayInsertNumber(int *Arr, int len, int num)
 {
-	return NULL;
+	int i;
+	if (Arr==NULL)
+		return NULL;
+	if (len <= 0)
+		return NULL;
+	for (i = 0; i <  len; i++)
+	{
+		if (Arr[i] >= num)
+		{
+			for (int j = (len - 1); j >= i; j--)
+			{
+				Arr[j + 1] = Arr[j];
+			}
+			Arr[i] = num;
+			len++;
+			return Arr;
+		}
+	}
+	Arr[i] = num;
+	len++;
+	return Arr;
 }
